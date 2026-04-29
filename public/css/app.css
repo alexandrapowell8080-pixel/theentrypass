@@ -360,7 +360,7 @@ a {
     position: relative;
     overflow: hidden;
     background-color: var(--color-background);
-    padding: var(--spacing-10) var(--spacing-4) 0;
+    padding: 10;
 }
 
 @media (min-width: 768px) {
