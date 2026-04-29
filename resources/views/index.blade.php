@@ -180,247 +180,383 @@
     </div>
 </section>
         <section id="exams" class="section exams-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Choose Your Exam</h2>
-                    <p class="section-description">Select an exam type to explore practice tests and drills.</p>
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Choose Your Exam</h2>
+            <p class="section-description">Select an exam type to explore practice tests and drills.</p>
+        </div>
+        <div class="exam-grid">
+            
+            {{-- TEAS 7 Card --}}
+            <div class="exam-card exam-teas">
+                <div class="exam-card-header">
+                    <div class="exam-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+                    </div>
+                    <h3 class="exam-title">TEAS 7</h3>
+                    <p class="exam-description">Test of Essential Academic Skills — the most common nursing entrance exam.</p>
                 </div>
-                <div class="exam-grid">
-                    <div class="exam-card exam-teas">
-                        <div class="exam-card-header">
-                            <div class="exam-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
-                            </div>
-                            <h3 class="exam-title">TEAS 7</h3>
-                            <p class="exam-description">Test of Essential Academic Skills — the most common nursing entrance exam.</p>
+                <div class="exam-subjects">
+                    {{-- English --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="teas-english">
+                        <span>English & Language Usage</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">3 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
                         </div>
-                        <div class="exam-subjects">
-                            <button class="subject-btn" aria-expanded="false" aria-controls="teas-english">
-                                <span>English & Language Usage</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">3 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="teas-english" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg><div><span class="test-name">English Practice Test 1</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg><div><span class="test-name">Free English Practice Test</span><span class="test-questions">15 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg><div><span class="test-name">English Grammar Drill</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="teas-science">
-                                <span>Science</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">3 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="teas-science" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Science Practice Test 1</span><span class="test-questions">30 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Biology Review</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Chemistry Basics</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="teas-math">
-                                <span>Math</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">3 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="teas-math" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Math Practice Test 1</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Algebra Review</span><span class="test-questions">20 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Geometry Basics</span><span class="test-questions">15 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="teas-reading">
-                                <span>Reading</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">3 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="teas-reading" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Reading Practice Test 1</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Comprehension Drills</span><span class="test-questions">20 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Vocabulary Builder</span><span class="test-questions">30 questions</span></div></a>
-                                </div>
-                            </div>
+                    </button>
+                    <div id="teas-english" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+                                <div><span class="test-name">English Practice Test 1</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+                                <div><span class="test-name">Free English Practice Test</span><span class="test-questions">15 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+                                <div><span class="test-name">English Grammar Drill</span><span class="test-questions">20 questions</span></div>
+                            </a>
                         </div>
                     </div>
-                    <div class="exam-card exam-hesi">
-                        <div class="exam-card-header">
-                            <div class="exam-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg>
-                            </div>
-                            <h3 class="exam-title">HESI A2</h3>
-                            <p class="exam-description">Health Education Systems Inc. Admission Assessment — widely used for nursing admissions.</p>
+
+                    {{-- Science --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="teas-science">
+                        <span>Science</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">3 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
                         </div>
-                        <div class="exam-subjects">
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-anatomy">
-                                <span>Anatomy</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-anatomy" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Anatomy Practice Test 1</span><span class="test-questions">30 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Body Systems Review</span><span class="test-questions">25 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-chemistry">
-                                <span>Chemistry</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-chemistry" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Chemistry Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Organic Chemistry</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-biology">
-                                <span>Biology</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-biology" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Biology Practice Test</span><span class="test-questions">30 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Cell Biology</span><span class="test-questions">25 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-grammar">
-                                <span>Grammar</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-grammar" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Grammar Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Parts of Speech</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-vocabulary">
-                                <span>Vocabulary</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-vocabulary" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Vocabulary Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Medical Terminology</span><span class="test-questions">30 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-reading">
-                                <span>Reading</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-reading" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Reading Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Reading Comprehension</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-math">
-                                <span>Math</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-math" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Math Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Basic Math Skills</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="hesi-physics">
-                                <span>Physics</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="hesi-physics" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Physics Practice Test</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Physics Concepts</span><span class="test-questions">20 questions</span></div></a>
-                                </div>
-                            </div>
+                    </button>
+                    <div id="teas-science" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Science Practice Test 1</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Biology Review</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Chemistry Basics</span><span class="test-questions">20 questions</span></div>
+                            </a>
                         </div>
                     </div>
-                    <div class="exam-card exam-nex">
-                        <div class="exam-card-header">
-                            <div class="exam-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
-                            </div>
-                            <h3 class="exam-title">NLN NEX</h3>
-                            <p class="exam-description">National League for Nursing Exam — tests core academic readiness for nursing programs.</p>
+
+                    {{-- Math --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="teas-math">
+                        <span>Math</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">3 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
                         </div>
-                        <div class="exam-subjects">
-                            <button class="subject-btn" aria-expanded="false" aria-controls="nex-math">
-                                <span>Math</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="nex-math" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Math Practice Test 1</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Math Practice Test 2</span><span class="test-questions">25 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="nex-science">
-                                <span>Science</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="nex-science" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Science Practice Test 1</span><span class="test-questions">30 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Science Practice Test 2</span><span class="test-questions">30 questions</span></div></a>
-                                </div>
-                            </div>
-                            <button class="subject-btn" aria-expanded="false" aria-controls="nex-verbal">
-                                <span>Verbal</span>
-                                <div class="subject-btn-right">
-                                    <span class="subject-count">2 tests</span>
-                                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
-                                </div>
-                            </button>
-                            <div id="nex-verbal" class="subject-content" hidden>
-                                <div class="test-list">
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Verbal Practice Test 1</span><span class="test-questions">25 questions</span></div></a>
-                                    <a href="#" class="test-item"><svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><div><span class="test-name">Verbal Practice Test 2</span><span class="test-questions">25 questions</span></div></a>
-                                </div>
-                            </div>
+                    </button>
+                    <div id="teas-math" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Math Practice Test 1</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Algebra Review</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Geometry Basics</span><span class="test-questions">15 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Reading --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="teas-reading">
+                        <span>Reading</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">3 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="teas-reading" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Reading Practice Test 1</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Comprehension Drills</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Vocabulary Builder</span><span class="test-questions">30 questions</span></div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            {{-- HESI A2 Card --}}
+            <div class="exam-card exam-hesi">
+                <div class="exam-card-header">
+                    <div class="exam-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg>
+                    </div>
+                    <h3 class="exam-title">HESI A2</h3>
+                    <p class="exam-description">Health Education Systems Inc. Admission Assessment — widely used for nursing admissions.</p>
+                </div>
+                <div class="exam-subjects">
+                    {{-- Anatomy --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-anatomy">
+                        <span>Anatomy</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-anatomy" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Anatomy Practice Test 1</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Body Systems Review</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Chemistry --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-chemistry">
+                        <span>Chemistry</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-chemistry" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Chemistry Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Organic Chemistry</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Biology --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-biology">
+                        <span>Biology</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-biology" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Biology Practice Test</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Cell Biology</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Grammar --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-grammar">
+                        <span>Grammar</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-grammar" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Grammar Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Parts of Speech</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Vocabulary --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-vocabulary">
+                        <span>Vocabulary</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-vocabulary" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Vocabulary Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Medical Terminology</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Reading --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-reading">
+                        <span>Reading</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-reading" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Reading Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Reading Comprehension</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Math --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-math">
+                        <span>Math</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-math" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Math Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Basic Math Skills</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Physics --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="hesi-physics">
+                        <span>Physics</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="hesi-physics" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Physics Practice Test</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Physics Concepts</span><span class="test-questions">20 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- NLN NEX Card --}}
+            <div class="exam-card exam-nex">
+                <div class="exam-card-header">
+                    <div class="exam-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                    </div>
+                    <h3 class="exam-title">NLN NEX</h3>
+                    <p class="exam-description">National League for Nursing Exam — tests core academic readiness for nursing programs.</p>
+                </div>
+                <div class="exam-subjects">
+                    {{-- Math --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="nex-math">
+                        <span>Math</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="nex-math" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Math Practice Test 1</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Math Practice Test 2</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Science --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="nex-science">
+                        <span>Science</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="nex-science" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Science Practice Test 1</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Science Practice Test 2</span><span class="test-questions">30 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- Verbal --}}
+                    <button class="subject-btn" aria-expanded="false" aria-controls="nex-verbal">
+                        <span>Verbal</span>
+                        <div class="subject-btn-right">
+                            <span class="subject-count">2 tests</span>
+                            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+                        </div>
+                    </button>
+                    <div id="nex-verbal" class="subject-content" hidden>
+                        <div class="test-list">
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Verbal Practice Test 1</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                            <a href="#" class="test-item">
+                                <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                <div><span class="test-name">Verbal Practice Test 2</span><span class="test-questions">25 questions</span></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
         <section id="why" class="section features-section">
             <div class="container">
                 <div class="section-header">
