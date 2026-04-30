@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name('homepage');
 
-Route::get('/questions', [QuestionsController::class, 'questions'])->name('questions');
+// Route::get('/questions', [QuestionsController::class, 'questions'])->name('questions');
 Route::post('/answer', [QuestionsController::class, 'answer'])->name('answer');
 Route::get('/next-question/{question_id}', [QuestionsController::class, 'nextQuestion'])->name('next-question');
 Route::get('/retry-question/{question_id}', [QuestionsController::class, 'retryQuestion'])->name('retry-question');
