@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Entry Pass</title>
+    <title> The Entry Pass</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <meta name="description"
+        content="Practice and ace {{ $course_name }} using our quality prep materials on {{ $subject_name }} using {{ $exam_name }} ">
+
+
+
+
+
+    <meta name="keywords" content="{{ $course_name }}, {{ $subject_name }}, {{ $exam_name }}">
+    <link rel="canonical" href="{{ url($course_slug . '/' . $exam_slug) }}">
+
+    <script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
     <script>
         tailwind.config = {
             theme: {
@@ -56,15 +69,16 @@
                 </div>
                 <div aria-valuemax="100" aria-valuemin="0" role="progressbar"
                     class="relative w-full overflow-hidden rounded-full h-2 bg-borderBase">
-                    <div class="h-full bg-primary transition-all duration-500 w-[45%] progress">
+                    <div class="h-full bg-primary transition-all duration-500 w-[0%] progress">
                     </div>
                 </div>
             </div>
 
             {{-- question --}}
             <div class="flex flex-row items-start gap-6">
-                <div class="min-w-0 flex flex-1 border border-borderBase rounded-2xl bg-card shadow-sm overflow-hidden">
-                    <div class="w-1/2 p-6 border-r border-borderBase">
+                <div
+                    class="min-w-0 flex sm:flex-row flex-col flex-1 border border-borderBase rounded-2xl bg-card shadow-sm overflow-hidden">
+                    <div class="sm:w-1/2 p-6 border-r border-borderBase">
                         <div style="opacity: 1; transform: none;">
                             <div class="mb-6">
                                 <h2 id="{{ $question->id }}"
@@ -76,31 +90,35 @@
                                         class="w-full text-left p-4 rounded-xl border border-borderBase hover:border-primary/50 hover:bg-appBg transition-all flex items-center gap-3 group">
                                         <span
                                             class="w-8 h-8 rounded-lg bg-appBg border border-borderBase flex items-center justify-center text-sm font-bold text-textMuted group-hover:text-primary shrink-0">A</span>
-                                        <span class="flex-1 text-sm font-medium optionA">{{ $question->optionA }}</span>
+                                        <span
+                                            class="flex-1 text-sm font-medium optionA">{{ $question->optionA }}</span>
                                     </button>
                                     <button id="optionB"
                                         class="w-full text-left p-4 rounded-xl border border-borderBase hover:border-primary/50 hover:bg-appBg transition-all flex items-center gap-3 group">
                                         <span
                                             class="w-8 h-8 rounded-lg bg-appBg border border-borderBase flex items-center justify-center text-sm font-bold text-textMuted group-hover:text-primary shrink-0">B</span>
-                                        <span class="flex-1 text-sm font-medium optionB">{{ $question->optionB }}</span>
+                                        <span
+                                            class="flex-1 text-sm font-medium optionB">{{ $question->optionB }}</span>
                                     </button>
                                     <button id="optionC"
                                         class="w-full text-left p-4 rounded-xl border border-borderBase hover:border-primary/50 hover:bg-appBg transition-all flex items-center gap-3 group">
                                         <span
                                             class="w-8 h-8 rounded-lg bg-appBg border border-borderBase flex items-center justify-center text-sm font-bold text-textMuted group-hover:text-primary shrink-0">C</span>
-                                        <span class="flex-1 text-sm font-medium optionC">{{ $question->optionC }}</span>
+                                        <span
+                                            class="flex-1 text-sm font-medium optionC">{{ $question->optionC }}</span>
                                     </button>
                                     <button id="optionD"
                                         class="w-full text-left p-4 rounded-xl border border-borderBase hover:border-primary/50 hover:bg-appBg transition-all flex items-center gap-3 group">
                                         <span
                                             class="w-8 h-8 rounded-lg bg-appBg border border-borderBase flex items-center justify-center text-sm font-bold text-textMuted group-hover:text-primary shrink-0">D</span>
-                                        <span class="flex-1 text-sm font-medium optionD">{{ $question->optionD }}</span>
+                                        <span
+                                            class="flex-1 text-sm font-medium optionD">{{ $question->optionD }}</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div
-                            class=" submit_btn_card flex items-center justify-between mt-6 pt-4 border-t border-borderBase">
+                            class=" submit_btn_card flex  items-center justify-between mt-6 pt-4 border-t border-borderBase">
                             <button
                                 class="inline-flex items-center justify-center gap-2 text-sm font-medium text-textMuted disabled:opacity-30 h-9 px-4 py-2"
                                 disabled>
@@ -115,12 +133,12 @@
                             <button id="submitBtn"
                                 class="inline-flex items-center justify-center gap-2 text-sm font-bold bg-primary cursor-not-allowed text-white shadow-lg shadow-primary/20 h-9 px-6 py-2 rounded-xl hover:bg-primary/90 transition-all"
                                 disabled>
-                                Submit Answer
+                                Submit
                             </button>
                         </div>
                     </div>
 
-                    <div class="w-1/2 p-6 bg-appBg/30">
+                    <div class="sm:w-1/2 p-6 bg-appBg/30">
                         <p class="text-[11px] font-bold text-textMuted uppercase mb-3">Drag your answer here</p>
                         <div id="right-col"
                             class="space-y-3 min-h-[120px] border-2 border-dashed border-borderBase rounded-2xl flex flex-col items-center justify-center p-4 bg-white/50">
@@ -198,7 +216,7 @@
             </div>
 
             {{-- extra data --}}
-            <div class=" w-full flex  gap-3 my-5 shrink-0 space-y-4">
+            <div class=" w-full sm:flex  gap-3 my-5 shrink-0 space-y-4">
                 <div class="rounded-2xl flex-1 bg-card border border-borderBase shadow-sm p-4">
                     <h3 class="font-bold text-xs text-textMain mb-3 flex items-center gap-2 uppercase tracking-wide">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -210,28 +228,30 @@
                         </svg>More in this set
                     </h3>
                     <div class="space-y-2">
-                        <a class="flex items-center gap-2 p-2 rounded-lg hover:bg-appBg transition-colors group"
-                            href="/quiz/69f0706dc522ae17d2f0114b">
-                            <div class="flex-1 min-w-0">
-                                <p
-                                    class="text-xs font-bold text-textMain truncate group-hover:text-primary transition-colors">
-                                    Free English Grammar Drill</p>
-                                <div class="flex items-center gap-1 mt-0.5">
-                                    <div
-                                        class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-secondary/10 text-secondary uppercase">
-                                        beginner</div>
-                                    <div
-                                        class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-success/10 text-success uppercase">
-                                        Free</div>
+                        @foreach ($exams as $exam)
+                            <a class="flex items-center gap-2 p-2 rounded-lg hover:bg-appBg transition-colors group"
+                                href="{{ route('exam-questions', ['course' => $course_slug, 'exam' => $exam->slug]) }}">
+                                <div class="flex-1 min-w-0">
+                                    <p
+                                        class="text-xs font-bold text-textMain truncate group-hover:text-primary transition-colors">
+                                        {{ $exam->name }}</p>
+                                    <div class="flex items-center gap-1 mt-0.5">
+                                        <div
+                                            class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-secondary/10 text-secondary uppercase">
+                                            beginner</div>
+                                        <div
+                                            class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-success/10 text-success uppercase">
+                                            Free</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-chevron-right w-3.5 h-3.5 text-textMuted group-hover:translate-x-1 transition-transform">
-                                <path d="m9 18 6-6-6-6"></path>
-                            </svg>
-                        </a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-right w-3.5 h-3.5 text-textMuted group-hover:translate-x-1 transition-transform">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
 
@@ -244,23 +264,27 @@
                             <path
                                 d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z">
                             </path>
-                        </svg>Other TEAS 7 sets
+                        </svg>Other {{ $course_name }} sets
                     </h3>
                     <p class="text-[10px] text-textMuted mb-3 font-medium">Explore more subjects</p>
                     <div class="space-y-1">
-                        <a class="flex items-center gap-2 p-2 rounded-lg hover:bg-appBg transition-all group"
-                            href="/exams/teas-7/teas-science">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-xs font-bold text-textMain group-hover:text-primary">Science</p>
-                                <p class="text-[10px] text-textMuted">2 practice tests</p>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"
-                                class="lucide lucide-chevron-right w-3.5 h-3.5 text-textMuted">
-                                <path d="m9 18 6-6-6-6"></path>
-                            </svg>
-                        </a>
+                        @foreach ($subjects as $subject)
+                            <a class="flex items-center gap-2 p-2 rounded-lg hover:bg-appBg transition-all group"
+                                href="{{ route('exam-questions', ['course' => $course_slug, 'exam' => $subject->exams->first()?->slug]) }}">
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-bold text-textMain group-hover:text-primary">
+                                        {{ $subject->name }}</p>
+                                    <p class="text-[10px] text-textMuted">2 practice tests</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-chevron-right w-3.5 h-3.5 text-textMuted">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg>
+                            </a>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -284,7 +308,8 @@
         let rationale = document.querySelector('.rationale')
         let rationale_text_card = document.querySelector('.rationale_text_card')
         let rationale_text = document.querySelector('.rationale_text')
-        let passed_count = 0
+        let passed_count = 0;
+        let done_count = 0;
 
         let leftSortable = Sortable.create(left, {
             group: 'shared',
@@ -370,6 +395,7 @@
                         right.classList.add('bg-success/10', 'border-success')
                         passed_count++
                     }
+                    done_count++;
                     study_tip_card.classList.remove('hidden');
                     document.querySelector('.study_tip_text').innerText = response.study_tip
                     rationale.classList.remove('hidden')
@@ -394,7 +420,11 @@
         }
 
         function nextQuestion() {
+
             let question_id = document.querySelector('.question').id
+            if (Number(total_questions) === done_count) {
+                question_id = -1
+            }
             fetch('/next-question/' + question_id)
                 .then(response => response.json())
                 .then(response => {
@@ -606,7 +636,7 @@
 
       <img src="${gif}" class="w-full h-40 object-cover rounded-xl mb-6">
 
-      <button id="modal-primary-btn" class="w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 ${bgColor}">
+      <button onclick="window.location.reload()" id="modal-primary-btn" class="w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 ${bgColor}">
         ${btnText}
       </button>
     </div>
@@ -697,6 +727,10 @@
 
                 animation.onfinish = () => confetti.remove();
             }
+        }
+
+        function redoExam() {
+            window.location.reload();
         }
     </script>
 </body>
