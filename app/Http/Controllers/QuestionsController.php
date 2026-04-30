@@ -372,7 +372,21 @@ class QuestionsController extends Controller
      */
     public function nextQuestion(int $question_id): JsonResponse
     {
-        $question = $this->questions[$question_id];
+        // $question = $this->questions[$question_id];
+        $questionData = $this->questions[$question_id] ?? null;
+        $question = $questionData ? (object) $questionData : null;
+        if (! $question) {
+            if (count($this->questions) == $question_id) {
+                return response()->json([
+                    'message' => 'The exam is completed!',
+                ], 200);
+            } else {
+                return response()->json([
+                    'message' => 'The requested question does not exits!!',
+                ], 404);
+            }
+
+        }
 
         return response()->json([
             'question' => $question,
@@ -386,7 +400,6 @@ class QuestionsController extends Controller
     {
         $question = $this->questions[$question_id - 1];
 
-       
         return response()->json([
             'question' => $question,
         ]);

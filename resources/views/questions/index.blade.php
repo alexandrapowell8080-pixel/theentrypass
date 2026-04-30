@@ -8,6 +8,7 @@
     <title>The Entry Pass</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script>
         tailwind.config = {
             theme: {
@@ -31,6 +32,7 @@
 </head>
 
 <body class="bg-appBg text-textMain antialiased">
+    @include('partials.header')
     <div class="min-h-screen">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
             {{-- heading --}}
@@ -38,7 +40,9 @@
                 <div class="flex items-center justify-between mb-3">
                     <div>
                         <p class="text-xs text-textMuted font-bold uppercase tracking-tight">English Practice Test 1</p>
-                        <p class="text-sm font-semibold">Question 1 of {{ $question_count }}</p>
+                        <p class="text-sm font-semibold">Question <span class="question_number">1</span> of
+                            <span class="total_questions" id="{{ $question_count }}">{{ $question_count }}</span>
+                        </p>
                     </div>
                     <a href="/"
                         class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors hover:text-error h-8 rounded-md px-3 text-xs text-textMuted">
@@ -52,7 +56,7 @@
                 </div>
                 <div aria-valuemax="100" aria-valuemin="0" role="progressbar"
                     class="relative w-full overflow-hidden rounded-full h-2 bg-borderBase">
-                    <div class="h-full bg-primary transition-all duration-500" style="width: 20%;">
+                    <div class="h-full bg-primary transition-all duration-500 w-[45%] progress">
                     </div>
                 </div>
             </div>
@@ -262,6 +266,7 @@
             </div>
         </div>
     </div>
+    @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -269,12 +274,17 @@
         const left = document.getElementById('left-col');
         const right = document.getElementById('right-col');
         let submitBtn = document.getElementById('submitBtn');
+        let question_at = 1;
+        let question_number = document.querySelector('.question_number')
+        let total_questions = document.querySelector('.total_questions').id
+        let progress = document.querySelector('.progress')
         const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         let user_answer = null;
         let study_tip_card = document.getElementById('study_tip_card')
         let rationale = document.querySelector('.rationale')
         let rationale_text_card = document.querySelector('.rationale_text_card')
         let rationale_text = document.querySelector('.rationale_text')
+        let passed_count = 0
 
         let leftSortable = Sortable.create(left, {
             group: 'shared',
@@ -358,11 +368,13 @@
                     } else if (response.status == 'correct') {
                         right.classList.remove('bg-white/10', 'border-primary')
                         right.classList.add('bg-success/10', 'border-success')
+                        passed_count++
                     }
                     study_tip_card.classList.remove('hidden');
                     document.querySelector('.study_tip_text').innerText = response.study_tip
                     rationale.classList.remove('hidden')
                     rationale_text.innerText = response.rationale
+
                 })
                 .catch(err => {
                     console.log(err)
@@ -386,6 +398,16 @@
             fetch('/next-question/' + question_id)
                 .then(response => response.json())
                 .then(response => {
+                    if (response.message == 'The exam is completed!') {
+                        showExamResult({
+                            score: passed_count,
+                            passMark: 0.75 * total_questions,
+                            onAction: () => {
+                                console.log("Button clicked");
+                            }
+                        });
+                        return
+                    }
                     while (right.firstChild) {
                         left.appendChild(right.firstChild);
                     }
@@ -414,6 +436,12 @@
                     });
 
                     items.forEach(item => left.appendChild(item));
+                    question_at++;
+                    question_number.innerText = question_at
+                    count = question_at / total_questions * 100;
+                    count = count + '%'
+                    progress.style.width = count
+
 
                 })
         }
@@ -453,6 +481,222 @@
                     items.forEach(item => left.appendChild(item));
 
                 })
+        }
+
+        function resultCard() {
+            const score = 58;
+            const passMark = 50;
+            const isPassed = score >= passMark;
+
+            // Backdrop (The Overlay)
+            const backdrop = document.createElement("div");
+            backdrop.className = "fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4";
+            backdrop.id = "result-overlay";
+
+            // Container Card
+            const card = document.createElement("div");
+            card.className =
+                "bg-white shadow-2xl rounded-3xl p-8 w-full max-w-sm border border-gray-100 text-center animate-in fade-in zoom-in duration-300";
+
+            // Top Section: Emoji & Label
+            const icon = document.createElement("div");
+            icon.className = "text-5xl mb-2";
+            icon.textContent = isPassed ? "🌟" : "☁️";
+
+            const statusText = document.createElement("h2");
+            statusText.className =
+                `text-sm uppercase tracking-widest font-bold ${isPassed ? 'text-green-500' : 'text-red-500'}`;
+            statusText.textContent = isPassed ? "Examination Passed" : "Examination Failed";
+
+            // Score Display
+            const scoreContainer = document.createElement("div");
+            scoreContainer.className = "text-center py-6 bg-slate-50 rounded-2xl my-6";
+
+            const scoreValue = document.createElement("div");
+            scoreValue.className = "text-6xl font-black text-slate-800";
+            scoreValue.textContent = score;
+
+            const scoreLabel = document.createElement("div");
+            scoreLabel.className = "text-slate-400 text-sm font-medium";
+            scoreLabel.textContent = "Total Points";
+            scoreContainer.append(scoreValue, scoreLabel);
+
+            // Image/GIF
+            const gif = document.createElement("img");
+            gif.src = isPassed ?
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNqeXZwbDkybnVyNXVpa2JsZmQ5aXJwcW4xdHpybnB3cjIydjBrciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o85xr9ZKY1wbbJXDW/giphy.gif" :
+                "https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif";
+            gif.className = "w-full h-40 object-cover rounded-xl mb-6";
+
+            // Button
+            const btn = document.createElement("button");
+            btn.className =
+                `w-full py-4 rounded-2xl font-bold text-white transition transform active:scale-95 ${isPassed ? 'bg-green-600 hover:bg-green-700' : 'bg-slate-800 hover:bg-slate-900'}`;
+            btn.textContent = isPassed ? "Continue to Course" : "Retake Exam";
+
+            // Close overlay on click
+            btn.onclick = () => backdrop.remove();
+
+            // Assembly
+            card.append(icon, statusText, scoreContainer, gif, btn);
+            backdrop.appendChild(card);
+            document.body.appendChild(backdrop);
+        }
+
+        /**
+         * Triggers a modern Exam Result Modal
+         * @param {Object} options - Configuration for the result
+         * @param {number} options.score - The achieved score (0-100)
+         * @param {number} options.passMark - The minimum score to pass (default 60)
+         * @param {Function} options.onAction - Callback for the primary button
+         */
+        const showExamResult = ({
+            score = 66,
+            passMark = 60,
+            onAction
+        }) => {
+            const isPassed = score >= passMark;
+            const themeColor = isPassed ? 'text-emerald-500' : 'text-rose-500';
+            const bgColor = isPassed ? 'bg-emerald-500' : 'bg-rose-500';
+            const statusIcon = isPassed ? '🏆' : '🎯';
+            const statusText = isPassed ? 'Passed' : 'Failed';
+            const message = isPassed ? 'Great job! Keep going.' : 'Don’t give up. Try again.';
+            const btnText = isPassed ? 'Continue' : 'Retry Exam';
+            const gif = isPassed ?
+                'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNqeXZwbDkybnVyNXVpa2JsZmQ5aXJwcW4xdHpybnB3cjIydjBrciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o85xr9ZKY1wbbJXDW/giphy.gif' :
+                'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2lwaHh5bXZ0YnVyeTM2bmJra2RycDJsMzJvaGF6OG5ibHJtazF3dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/14aUO0Mf7dWDXW/giphy.gif';
+
+            // 1. Create Modal Container
+            const modalOverlay = document.createElement('div');
+            modalOverlay.className =
+                'fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md opacity-0 transition-opacity duration-300';
+
+            // 2. Create Modal Content
+            modalOverlay.innerHTML = `
+    <div id="modal-card" class="relative w-full max-w-md transform scale-95 opacity-0 transition-all duration-500 ease-out bg-white rounded-3xl shadow-2xl overflow-hidden p-8 text-center">
+      
+      <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <p class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-1">Your Score</p>
+      
+      
+      <div class="inline-block px-4 py-1 rounded-full text-sm font-bold uppercase tracking-tighter mb-6 ${isPassed ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}">
+        ${statusText}
+      </div>
+
+      <div class="relative w-48 h-48 mx-auto mb-8">
+        <svg class="w-full h-full transform -rotate-90">
+          <circle cx="96" cy="96" r="88" stroke="currentColor" stroke-width="12" fill="transparent" class="text-gray-100" />
+          <circle id="progress-circle" cx="96" cy="96" r="88" stroke="currentColor" stroke-width="12" fill="transparent" 
+            stroke-dasharray="552.92" stroke-dashoffset="552.92"
+            class="${themeColor} transition-all duration-1000 ease-out" />
+        </svg>
+        <div class="absolute inset-0 flex items-center justify-center">
+           <div class="w-32 h-32 rounded-full bg-white shadow-inner flex items-center justify-center">
+              
+             <h2 id="animated-score" class="text-5xl font-black mb-2 ${themeColor} drop-shadow-md">0%</h2>
+           </div>
+        </div>
+      </div>
+
+
+      <img src="${gif}" class="w-full h-40 object-cover rounded-xl mb-6">
+
+      <button id="modal-primary-btn" class="w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 ${bgColor}">
+        ${btnText}
+      </button>
+    </div>
+  `;
+
+            document.body.appendChild(modalOverlay);
+
+            // --- Logic & Animations ---
+
+            // Trigger Entry Animation
+            requestAnimationFrame(() => {
+                modalOverlay.classList.remove('opacity-0');
+                const card = modalOverlay.querySelector('#modal-card');
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            });
+
+            // Animate Progress Bar
+            const circle = modalOverlay.querySelector('#progress-circle');
+            const radius = 88;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (score / 100) * circumference;
+            setTimeout(() => {
+                circle.style.strokeDashoffset = offset;
+            }, 100);
+
+            // Animate Score Number
+            const scoreDisplay = modalOverlay.querySelector('#animated-score');
+            let currentScore = 0;
+            const duration = 1000; // 1s
+            const startTime = performance.now();
+
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                currentScore = Math.floor(progress * score);
+                scoreDisplay.innerText = `${currentScore}%`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            requestAnimationFrame(animate);
+
+            // Optional: Confetti Effect (Simple Canvas Injection)
+            if (isPassed) {
+                injectConfetti();
+            }
+
+            // Cleanup/Close Functions
+            const closeModal = () => {
+                modalOverlay.classList.add('opacity-0');
+                setTimeout(() => modalOverlay.remove(), 300);
+            };
+
+            modalOverlay.querySelector('#close-modal').onclick = closeModal;
+            modalOverlay.querySelector('#modal-primary-btn').onclick = () => {
+                if (onAction) onAction();
+                closeModal();
+            };
+        };
+
+        /**
+         * Simple CSS-based confetti trigger
+         */
+        function injectConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'fixed w-2 h-2 rounded-full z-[60] pointer-events-none';
+                confetti.style.backgroundColor = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899'][Math.floor(Math.random() *
+                    4)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                document.body.appendChild(confetti);
+
+                const animation = confetti.animate([{
+                        transform: `translate3d(0, 0, 0) rotate(0deg)`,
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate3d(${(Math.random() - 0.5) * 300}px, 100vh, 0) rotate(${Math.random() * 360}deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: Math.random() * 2000 + 1000,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                });
+
+                animation.onfinish = () => confetti.remove();
+            }
         }
     </script>
 </body>
