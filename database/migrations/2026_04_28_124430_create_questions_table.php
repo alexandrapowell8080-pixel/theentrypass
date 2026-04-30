@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Exam::class);
             $table->text('question');
-            $table->text('extract');
+            $table->text('extract')->nullable();
             $table->string('optionA');
             $table->string('optionB');
             $table->string('optionC');

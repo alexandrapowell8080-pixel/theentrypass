@@ -11,7 +11,7 @@ class Course extends Model
         'name', 'slug',
     ];
 
-    public function subject(): HasMany
+    public function subjects(): HasMany
     {
         return $this->hasMany(Subject::class);
     }

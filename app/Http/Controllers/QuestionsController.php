@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exam;
+use App\Models\Questions;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -331,9 +333,16 @@ class QuestionsController extends Controller
 
     ];
 
-    public function questions(): View
+    public function questions(string $course, string $exam): View
     {
-        $question = (object) $this->questions[0];
+        $exam =  Exam::where('slug',$exam)->first();
+        if(!$exam){
+            abort(404,'Exam not found');
+        }
+
+        $question = Questions::where('exam_id',$exam->id)->first();
+
+        // $question = (object) $this->questions[0];
         $question_count = count($this->questions);
 
         return view('questions.index', compact('question', 'question_count'));
