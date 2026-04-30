@@ -15,7 +15,7 @@
             <nav class="nav-desktop" aria-label="Main Navigation">
                 <a href="#exams" class="nav-link">Exams</a>
                 <a href="#why" class="nav-link">Features</a>
-                <a href="https://nursespath.com/blog/" target="_blank" rel="noopener noreferrer" class="nav-link">Resources</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="nav-link">Resources</a>
                 <a href="#exams" class="btn btn-primary btn-sm">Get Started</a>
             </nav>
             <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">

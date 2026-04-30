@@ -11,7 +11,7 @@
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
-                <a href="https://nursespath.com/blog/" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Blog</a>
             </nav>
             <p class="footer-copyright">© {{ date('Y') }} The Entry Pass. All rights reserved.</p>
         </div>
