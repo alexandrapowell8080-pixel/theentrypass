@@ -185,22 +185,6 @@
             <h2 class="section-title">Choose Your Exam</h2>
             <p class="section-description">Select an exam type to explore practice tests and drills.</p>
         </div>
-          @foreach ($courses as $course)
-                <h1>Course: {{$course->name}}</h1>
-                <ol>
-                    @foreach ($course->subjects as $subject)
-                        <li>{{$subject->name}}</li>
-                        <ul>
-                            @foreach ($subject->exams as $exam)
-                            <a href="{{ route('exam-questions',['course' =>  $course->slug,'exam'=>$exam->slug]) }}">
-                                <li>{{$exam->name}}</li>
-                            </a>
-                            @endforeach
-                        </ul>
-                        
-                    @endforeach
-                </ol>
-            @endforeach
         <div class="exam-grid">
 
           
