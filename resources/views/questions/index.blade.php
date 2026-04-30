@@ -52,7 +52,7 @@
             <div class="sticky top-0 z-40 bg-appBg/90 backdrop-blur-lg pb-4 pt-2 mb-4 border-b border-borderBase/50">
                 <div class="flex items-center justify-between mb-3">
                     <div>
-                        <p class="text-xs text-textMuted font-bold uppercase tracking-tight">English Practice Test 1</p>
+                        <p class="text-xs text-textMuted font-bold uppercase tracking-tight">{{ $exam_name }}</p>
                         <p class="text-sm font-semibold">Question <span class="question_number">1</span> of
                             <span class="total_questions" id="{{ $question_count }}">{{ $question_count }}</span>
                         </p>
