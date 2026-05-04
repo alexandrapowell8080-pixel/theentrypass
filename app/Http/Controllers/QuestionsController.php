@@ -371,7 +371,7 @@ class QuestionsController extends Controller
             '@type' => 'QAPage',
             'name' => $question->question.' | '.env('APP_NAME'),
             'url' => url($course_slug.'/'.$exam_slug),
-            'description' => 'Practice and ace ' . $course_name . ' using our quality prep materials on ' . $subject_name . ' using ' . $exam_name,
+            'description' => 'Practice and ace '.$course_name.' using our quality prep materials on '.$subject_name.' using '.$exam_name,
             'mainEntity' => [
                 '@type' => 'Question',
                 'name' => $question->question,
@@ -411,7 +411,7 @@ class QuestionsController extends Controller
             'relatedLink' => $q_r,
         ];
 
-        return view('questions.index', compact('question', 'question_count', 'course_name', 'subject_name', 'exam_name', 'exam_slug', 'course_slug', 'subjects', 'exams','schema'));
+        return view('questions.index', compact('question', 'question_count', 'course_name', 'subject_name', 'exam_name', 'exam_slug', 'course_slug', 'subjects', 'exams', 'schema'));
     }
 
     /**
@@ -425,8 +425,6 @@ class QuestionsController extends Controller
             'exam_id' => 'required',
         ]);
 
-        $questionData = $this->questions[$data['question_id'] - 1] ?? null;
-        $question = $questionData ? (object) $questionData : null;
         $question = Questions::where('id', $data['question_id'])->first();
         if (! $question) {
             return response()->json([
@@ -448,9 +446,6 @@ class QuestionsController extends Controller
      */
     public function nextQuestion(int $question_id): JsonResponse
     {
-        // $question = $this->questions[$question_id];
-        $questionData = $this->questions[$question_id] ?? null;
-        $question = $questionData ? (object) $questionData : null;
         $question_query = Questions::where('id', $question_id);
         $question = (clone $question_query)->first();
         if (! $question) {
@@ -477,7 +472,12 @@ class QuestionsController extends Controller
      */
     public function retryQuestion(int $question_id)
     {
-        $question = $this->questions[$question_id - 1];
+        $question = Questions::whereId($question_id)->first();
+        if (! $question) {
+            return response()->json([
+                'message' => 'The requested question does not exits or has been deleted!!',
+            ], 404);
+        }
 
         return response()->json([
             'question' => $question,
