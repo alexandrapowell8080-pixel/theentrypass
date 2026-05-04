@@ -81,6 +81,12 @@
                     <div class="sm:w-1/2 p-6 border-r border-borderBase">
                         <div style="opacity: 1; transform: none;">
                             <div class="mb-6">
+                                @if ($question->extract)
+                                    <p class="extract_">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Similique aspernatur nam hic, recusandae ratione illo ullam impedit eveniet
+                                        numquam consequatur.</p>
+                                @endif
+                                <p class="hidden extract"></p>
                                 <h2 id="{{ $question->id }}"
                                     class="question font-semibold text-lg text-textMain mb-6 leading-relaxed">
                                     {{ $question->question }}
@@ -443,6 +449,7 @@
 
         function nextQuestion() {
 
+            document.querySelector('.extract_')?.classList.add('hidden')
             let question_id = document.querySelector('.question').id
             if (Number(total_questions) === done_count) {
                 question_id = -1
@@ -451,9 +458,11 @@
                 .then(response => response.json())
                 .then(response => {
                     if (response.message == 'The exam is completed!') {
+                        console.log(passed_count)
+                        console.log(total_questions)
                         showExamResult({
-                            score: passed_count,
-                            passMark: 0.75 * total_questions,
+                            score: (passed_count / total_questions) * 100,
+                            passMark: 75,
                             onAction: () => {
                                 console.log("Button clicked");
                             }
@@ -469,6 +478,10 @@
                     user_answer = null;
                     document.querySelector('.question').id = response.question.id
                     document.querySelector('.question').innerText = response.question.question
+                    if (response.question.extract.trim() != null) {
+                        document.querySelector('.extract').classList.remove('hidden')
+                        document.querySelector('.extract').innerText = response.question.extract
+                    }
                     document.querySelector('.optionA').innerText = response.question.optionA
                     document.querySelector('.optionB').innerText = response.question.optionB
                     document.querySelector('.optionC').innerText = response.question.optionC
@@ -511,6 +524,10 @@
 
                     user_answer = null;
                     document.querySelector('.question').id = response.question.id
+                    if (response.question.extract.trim() != null) {
+                        document.querySelector('.extract').classList.remove('hidden')
+                        document.querySelector('.extract').innerText = response.question.extract
+                    }
                     document.querySelector('.question').innerText = response.question.question
                     document.querySelector('.optionA').innerText = response.question.optionA
                     document.querySelector('.optionB').innerText = response.question.optionB
@@ -607,6 +624,8 @@
             passMark = 60,
             onAction
         }) => {
+            console.log(score)
+            console.log(passMark)
             const isPassed = score >= passMark;
             const themeColor = isPassed ? 'text-emerald-500' : 'text-rose-500';
             const bgColor = isPassed ? 'bg-emerald-500' : 'bg-rose-500';
