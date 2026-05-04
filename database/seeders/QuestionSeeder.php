@@ -16,14 +16,9 @@ class QuestionSeeder extends Seeder
     public function run(): void
     {
         $paths = [
-            'seeders/data/sample.csv',
-            'seeders/data/Anatomy.csv',
-            'seeders/data/Biology.csv',
-            'seeders/data/Chemistry.csv',
-            'seeders/data/HESI-Mathematics.csv',
-            'seeders/data/Physics.csv',
-            'seeders/data/Reading-Comprehension.csv',
-            'seeders/data/Vocabulary.csv',
+            'seeders/data/teas.csv',
+            'seeders/data/hesi.csv',
+            'seeders/data/nex.csv',
         ];
         foreach ($paths as $key => $path) {
             $csvPath = database_path($path);
