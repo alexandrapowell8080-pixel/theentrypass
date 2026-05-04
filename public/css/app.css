@@ -356,8 +356,6 @@ a {
     background-color: var(--color-primary-light);
 }
 
-/* HERO SECTION */
-
 .hero-section {
     position: relative;
     overflow: hidden;
@@ -477,8 +475,6 @@ a {
     gap: var(--spacing-3);
     margin-bottom: var(--spacing-2);
 }
-
-/* HERO MOCKUPS */
 
 .hero-mockups {
     position: relative;
@@ -721,10 +717,12 @@ a {
 .mockup-desktop {
     position: relative;
     z-index: 10;
+    display: none;
 }
 
 @media (min-width: 768px) {
     .mockup-desktop {
+        display: block;
         margin-bottom: -0.5rem;
     }
 }
@@ -898,8 +896,6 @@ a {
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
-/* HERO STATS BAR */
-
 .hero-stats {
     position: absolute;
     left: 0;
@@ -1007,8 +1003,6 @@ a {
     height: 1rem;
     margin-left: var(--spacing-1);
 }
-
-/* SECTIONS & EXAMS*/
 
 .section {
     padding: var(--spacing-20) var(--spacing-4);
@@ -1132,8 +1126,6 @@ a {
     line-height: var(--line-height-relaxed);
 }
 
-/*ACCORDION / SUBJECTS */
-
 .exam-subjects {
     padding: 0 var(--spacing-4) var(--spacing-5);
     display: flex;
@@ -1215,7 +1207,6 @@ a {
     border-top-right-radius: 0;
 }
 
-/* TEAS 7 - Unified Cyan Theme */
 .exam-teas .subject-btn[aria-expanded="true"] {
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-border);
@@ -1328,9 +1319,6 @@ a {
     font-size: var(--font-size-xs);
     color: var(--color-muted-foreground);
 }
-
-/* FEATURES & STEPS */
-
 
 .features-section {
     background-color: var(--color-muted);
@@ -1635,4 +1623,39 @@ a {
 .lucide-icon-tiny {
     width: 0.75rem;
     height: 0.75rem;
+}
+
+@media (max-width: 767px) {
+    .hero-stats {
+        z-index: 15;
+        top: 92%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 0 var(--spacing-4);
+        pointer-events: none;
+    }
+    
+    .hero-stats .stats-container {
+        pointer-events: auto;
+        padding: var(--spacing-4) var(--spacing-4);
+        margin-top: var(--spacing-4);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .stats-grid {
+        gap: var(--spacing-4);
+        justify-content: center;
+    }
+    
+    .stat-item {
+        gap: var(--spacing-2);
+    }
+    
+    .stat-value {
+        font-size: var(--font-size-xs);
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
 }
