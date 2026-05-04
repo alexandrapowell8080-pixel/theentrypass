@@ -316,6 +316,9 @@
             animation: 150,
             sort: false
         });
+        [...left.children].forEach((el, index) => {
+            el.dataset.index = index;
+        });
 
         let rightSortable = Sortable.create(right, {
             group: 'shared',
@@ -323,7 +326,7 @@
             onAdd: function(evt) {
                 if (right.children.length > 1) {
                     const previous = right.children[0];
-                    left.appendChild(previous);
+                    appendChild(previous);
                 }
                 user_answer = right.children[0].id.replace('option', '');
                 toogleSubmitBtn('on')
@@ -333,6 +336,25 @@
                 user_answer = null;
             },
         });
+
+        function appendChild(previous) {
+            const index = parseInt(previous.dataset.index);
+            const children = [...left.children];
+
+            let inserted = false;
+
+            for (let i = 0; i < children.length; i++) {
+                if (parseInt(children[i].dataset.index) > index) {
+                    left.insertBefore(previous, children[i]);
+                    inserted = true;
+                    break;
+                }
+            }
+
+            if (!inserted) {
+                left.appendChild(previous);
+            }
+        }
 
         function toogleSubmitBtn(state) {
             if (state == 'on') {
