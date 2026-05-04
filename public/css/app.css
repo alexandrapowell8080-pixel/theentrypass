@@ -1624,3 +1624,38 @@ a {
     width: 0.75rem;
     height: 0.75rem;
 }
+
+@media (max-width: 767px) {
+    .hero-stats {
+        z-index: 15;
+        top: 92%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 0 var(--spacing-4);
+        pointer-events: none;
+    }
+    
+    .hero-stats .stats-container {
+        pointer-events: auto;
+        padding: var(--spacing-4) var(--spacing-4);
+        margin-top: var(--spacing-4);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .stats-grid {
+        gap: var(--spacing-4);
+        justify-content: center;
+    }
+    
+    .stat-item {
+        gap: var(--spacing-2);
+    }
+    
+    .stat-value {
+        font-size: var(--font-size-xs);
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+}
