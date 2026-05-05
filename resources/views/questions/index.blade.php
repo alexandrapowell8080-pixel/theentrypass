@@ -48,7 +48,8 @@
     @include('partials.header')
     <div class="min-h-screen">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-            {{-- heading --}}
+            {{-- heading --}} 
+            {{ $course_name }}
             <div class="sticky top-0 z-40 bg-appBg/90 backdrop-blur-lg pb-4 pt-2 mb-4 border-b border-borderBase/50">
                 <div class="flex items-center justify-between mb-3">
                     <div>
@@ -57,15 +58,42 @@
                             <span class="total_questions" id="{{ $question_count }}">{{ $question_count }}</span>
                         </p>
                     </div>
-                    <a href="/"
-                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors hover:text-error h-8 rounded-md px-3 text-xs text-textMuted">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="lucide lucide-x w-4 h-4 mr-1">
-                            <path d="M18 6 6 18"></path>
-                            <path d="m6 6 12 12"></path>
-                        </svg> Exit
-                    </a>
+                    <div class="flex justify-between gap-3">
+                        @php
+                            $simulation_url = '';
+                            if($course_name == 'ATI TEAS 7'){
+                                $simulation_url = 'https://exam.theentrypass.com/ati-teas-7';
+                            }else if($course_name == 'NLN NEX'){
+                                $simulation_url = 'https://exam.theentrypass.com/nln-nex';
+                            }
+                            else if($course_name == 'HESI A2'){
+                                $simulation_url = 'https://exam.theentrypass.com/hesi-a2';
+                            }
+                        @endphp 
+                        <button onclick="window.location.href='{{ $simulation_url }}'"
+                            class="inline-flex items-center  border bg-green-300/50 justify-center gap-2 whitespace-nowrap font-medium transition-colors hover:text-black h-8 rounded-md px-3 text-xs text-textMuted">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-alarm-clock-check-icon lucide-alarm-clock-check">
+                                <circle cx="12" cy="13" r="8" />
+                                <path d="M5 3 2 6" />
+                                <path d="m22 6-3-3" />
+                                <path d="M6.38 18.7 4 21" />
+                                <path d="M17.64 18.67 20 21" />
+                                <path d="m9 13 2 2 4-4" />
+                            </svg> Simulation
+                        </button>
+                        <a href="/"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors hover:text-error h-8 rounded-md px-3 text-xs text-textMuted">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-x w-4 h-4 mr-1">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg> Exit
+                        </a>
+                    </div>
                 </div>
                 <div aria-valuemax="100" aria-valuemin="0" role="progressbar"
                     class="relative w-full overflow-hidden rounded-full h-2 bg-borderBase">
