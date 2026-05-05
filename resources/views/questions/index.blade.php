@@ -48,8 +48,7 @@
     @include('partials.header')
     <div class="min-h-screen">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-            {{-- heading --}} 
-            {{ $course_name }}
+            {{-- heading --}}
             <div class="sticky top-0 z-40 bg-appBg/90 backdrop-blur-lg pb-4 pt-2 mb-4 border-b border-borderBase/50">
                 <div class="flex items-center justify-between mb-3">
                     <div>
