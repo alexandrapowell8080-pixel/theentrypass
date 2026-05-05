@@ -58,7 +58,7 @@
                             <span class="total_questions" id="{{ $question_count }}">{{ $question_count }}</span>
                         </p>
                     </div>
-                    <div class="flex justify-between gap-3">
+                    <div class="flex justify-between sm:flex-row flex-col gap-3">
                         @php
                             $simulation_url = '';
                             if($course_name == 'ATI TEAS 7'){
