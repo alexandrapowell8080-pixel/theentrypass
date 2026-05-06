@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Nursing Entrance Exam Prep: TEAS 7, HESI A2 & NEX Practice</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
     <meta name="description" content="Struggling with nursing entrance exam prep? Master TEAS 7, HESI A2, and NEX with realistic practice questions, instant feedback, and smart tracking. Start now.">
     <meta name="keywords" content="nursing entrance exam prep, TEAS 7 practice test, HESI A2 study guide, NLN NEX exam questions, nursing school admission test">
     <link rel="canonical" href="https://www.theentrypass.com/">
