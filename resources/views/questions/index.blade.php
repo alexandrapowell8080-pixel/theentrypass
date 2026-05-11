@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <meta name="description"
         content="Practice and ace {{ $course_name }} using our quality prep materials on {{ $subject_name }} using {{ $exam_name }} ">
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
 
 
 
