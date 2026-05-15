@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> The Entry Pass</title>
+    <title>{{ $exam_name  }} | The Entry Pass</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -50,14 +50,14 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
             {{-- heading --}}
             <div class="sticky top-0 z-40 bg-appBg/90 backdrop-blur-lg pb-4 pt-2 mb-4 border-b border-borderBase/50">
-                <div class="flex items-center justify-between mb-3">
+                <div class="flex flex-col-reverse gap-y-5 sm:flex-row sm:items-center justify-between mb-3">
                     <div>
-                        <p class="text-xs text-textMuted font-bold uppercase tracking-tight">{{ $exam_name }}</p>
+                        <h1 class="text-xs text-textMuted font-bold uppercase tracking-tight">{{ $exam_name }}</h1>
                         <p class="text-sm font-semibold">Question <span class="question_number">1</span> of
                             <span class="total_questions" id="{{ $question_count }}">{{ $question_count }}</span>
                         </p>
                     </div>
-                    <div class="flex justify-between sm:flex-row flex-col gap-3">
+                    <div class="flex justify-between flex-row gap-3">
                         @php
                             $simulation_url = '';
                             if($course_name == 'ATI TEAS 7'){
@@ -81,7 +81,7 @@
                                 <path d="M6.38 18.7 4 21" />
                                 <path d="M17.64 18.67 20 21" />
                                 <path d="m9 13 2 2 4-4" />
-                            </svg> Simulation
+                            </svg>Start Simulation
                         </button>
                         <a href="/"
                             class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors hover:text-error h-8 rounded-md px-3 text-xs text-textMuted">
@@ -109,9 +109,7 @@
                         <div style="opacity: 1; transform: none;">
                             <div class="mb-6">
                                 @if ($question->extract)
-                                    <p class="extract_">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Similique aspernatur nam hic, recusandae ratione illo ullam impedit eveniet
-                                        numquam consequatur.</p>
+                                    <p class="extract_">{{$question->extract}}</p>
                                 @endif
                                 <p class="hidden extract"></p>
                                 <h2 id="{{ $question->id }}"
@@ -801,6 +799,7 @@
             window.location.reload();
         }
     </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
