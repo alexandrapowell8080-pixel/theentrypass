@@ -8,9 +8,9 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.jpeg') }}">
     <meta name="description" content="Struggling with nursing entrance exam prep? Master TEAS 7, HESI A2, and NEX with realistic practice questions, instant feedback, and smart tracking. Start now.">
     <meta name="keywords" content="nursing entrance exam prep, TEAS 7 practice test, HESI A2 study guide, NLN NEX exam questions, nursing school admission test">
-    <link rel="canonical" href="https://www.theentrypass.com/">
+    <link rel="canonical" href="https://theentrypass.com/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.theentrypass.com/">
+    <meta property="og:url" content="https://theentrypass.com/">
     <meta property="og:title" content="Nursing Entrance Exam Prep: TEAS 7, HESI A2 & NEX Practice">
     <meta property="og:description" content="Master TEAS 7, HESI A2, and NEX with realistic practice questions and smart tracking.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop">
@@ -32,7 +32,7 @@
             "@@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.theentrypass.com/"
+            "item": "https://theentrypass.com/"
           }]
         }
       ]
