@@ -46,7 +46,7 @@
 
 <body class="bg-appBg text-textMain antialiased">
     @include('partials.header')
-    <div class="min-h-screen">
+    <main class="min-h-screen">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
             {{-- heading --}}
             <div class="sticky top-0 z-40 bg-appBg/90 backdrop-blur-lg pb-4 pt-2 mb-4 border-b border-borderBase/50">
@@ -94,7 +94,7 @@
                         </a>
                     </div>
                 </div>
-                <div aria-valuemax="100" aria-valuemin="0" role="progressbar"
+                <div aria-valuemax="100" aria-valuemin="0" role="progressbar" aria-label="progressbar"
                     class="relative w-full overflow-hidden rounded-full h-2 bg-borderBase">
                     <div class="h-full bg-primary transition-all duration-500 w-[0%] progress">
                     </div>
@@ -320,7 +320,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     @include('partials.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
